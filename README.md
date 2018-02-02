@@ -21,5 +21,26 @@ phpAnalysis是一款轻量级非侵入式PHP应用性能分析器，适用于开
 
 1，2，3步骤都需要去分析代码，看哪部分执行时间长。如果人工一行代码去排查，需要消耗大量的开发人员的时间并且定位难度很大，于此，phpAnalysis诞生了 :)
 
+## 安装
+#### 准备
+1. 依赖的PHP扩展：<a target="_blank" href="https://tideways.io/profiler/article/35-installation-on-php">tideaways</a>, PDO, pdo_mysql, zlib
+2. PHP版本>= 5.4.0
+
+#### 安装phpAnalysis
+1. 下载源代码
+wget https://github.com/dreamans/phpAnalysis/archive/master.zip
+
+#### 修改php.ini
+```
+[tideways]
+extension=tideways.so
+;不需要自动加载，在程序中控制就行
+tideways.auto_prepend_library=0
+;频率设置为100，在程序调用时能改
+tideways.sample_rate=100
+```
+
+
+
 ## License
 MIT license.
