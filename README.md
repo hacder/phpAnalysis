@@ -28,7 +28,51 @@ phpAnalysis是一款轻量级非侵入式PHP应用性能分析器，适用于开
 
 #### 安装phpAnalysis
 1. 下载源代码
-wget https://github.com/dreamans/phpAnalysis/archive/master.zip
+```
+git clone https://github.com/dreamans/phpAnalysis.git
+cd phpAnalysis
+```
+2. 修改配置文件
+```
+文件位置：config/database.php
+修改数据库链接信息
+数据库需要自己创建
+建表语句请见install.sql
+
+return [
+
+    'connection' => [
+
+        'host' => '127.0.0.1', // 数据库主机名
+
+        'port' => 3306, // 数据库端口号
+
+        'user' => 'root', // 用户名
+
+        'pass' => 'root', // 密码
+
+        'db' => 'phpAnalysis', // 数据库名
+
+        'tb_prefix' => 'pa_',  // 表前缀
+    ],
+];
+```
+3. 修改Web Server配置，以Nginx为例
+```
+server {
+    listen       8000;
+    server_name  localhost;
+    root  {ProjectPath}/phpAnalysis/src/public;
+    index index.html;
+
+    location ~ \.php$ {
+        fastcgi_pass   127.0.0.1:9000;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include        fastcgi_params;
+    }
+}
+```
 
 #### 修改php.ini
 ```
