@@ -29,12 +29,13 @@ phpAnalysis是一款轻量级非侵入式PHP应用性能分析器，适用于开
 #### 安装phpAnalysis
 1. 下载源代码
 ```
+cd /home/www
 git clone https://github.com/dreamans/phpAnalysis.git
 cd phpAnalysis
 ```
 2. 修改配置文件
 ```
-文件位置：config/database.php
+文件位置：/home/www/phpAnalysis/src/config/database.php
 修改数据库链接信息
 数据库需要自己创建
 建表语句请见install.sql
@@ -62,7 +63,7 @@ return [
 server {
     listen       8000;
     server_name  localhost;
-    root  {ProjectPath}/phpAnalysis/src/public;
+    root  /home/www/phpAnalysis/src/public;
     index index.html;
 
     location ~ \.php$ {
@@ -74,8 +75,10 @@ server {
 }
 ```
 
-#### 修改php.ini
+4. 修改php.ini
 ```
+; 告诉PHP程序在执行前首先调用此文件
+auto_prepend_file = /home/www/phpAnalysis/src/agent/header.php
 [tideways]
 extension=tideways.so
 ;不需要自动加载，在程序中控制就行
@@ -83,8 +86,42 @@ tideways.auto_prepend_library=0
 ;频率设置为100，在程序调用时能改
 tideways.sample_rate=100
 ```
+5. 重启php-fpm进程
 
+如果安装顺利，此时访问 http://localhost:8000 能看到效果
 
+## 预览
+* 请求列表
 
+支持按应用实例名称、请求时段、url模糊查询筛选列表
+<img width="800" src="http://my-bucket.u.qiniudn.com/phpAnalysis/pa_list.png">
+
+* 请求执行基本信息
+
+<img src="http://my-bucket.u.qiniudn.com/phpAnalysis/pa_detail_base.png">
+
+* 请求携带的数据
+
+<img src="http://my-bucket.u.qiniudn.com/phpAnalysis/pa_detail_base_infos.png">
+
+<img src="http://my-bucket.u.qiniudn.com/phpAnalysis/pa_detail_base_post.png">
+
+* 调用明细
+
+<img src="http://my-bucket.u.qiniudn.com/phpAnalysis/pa_detail_list.png">
+
+## TODO
+* 权限系统
+* PHP应用管理
+* 应用控制台
+* 报表系统
+
+## 说明
+项目处于开发阶段，权限控制未完成且未做性能优化，**请勿在生产环境中部署**，感谢支持！
+
+稳定版本预计清明前后释出，敬请期待！
+
+对项目有任何意见建议请提issue https://github.com/dreamans/phpAnalysis/issues
+ 
 ## License
 MIT license.
