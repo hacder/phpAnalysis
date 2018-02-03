@@ -35,7 +35,7 @@ cd phpAnalysis
 ```
 2. 修改配置文件
 ```
-文件位置：/home/www/phpAnalysis/src/config/database.php
+文件位置：/home/www/phpAnalysis/config/database.php
 修改数据库链接信息
 数据库需要自己创建
 建表语句请见install.sql
@@ -63,7 +63,7 @@ return [
 server {
     listen       8000;
     server_name  localhost;
-    root  /home/www/phpAnalysis/src/public;
+    root  /home/www/phpAnalysis/public;
     index index.html;
 
     location ~ \.php$ {
@@ -78,7 +78,7 @@ server {
 4. 修改php.ini
 ```
 ; 告诉PHP程序在执行前首先调用此文件
-auto_prepend_file = /home/www/phpAnalysis/src/agent/header.php
+auto_prepend_file = /home/www/phpAnalysis/agent/header.php
 [tideways]
 extension=tideways.so
 ;不需要自动加载，在程序中控制就行
