@@ -1,6 +1,5 @@
 <?php
 
-$extName = 'xhprof';
 $extName = 'tideways';
 
 // 检测扩展是否存在

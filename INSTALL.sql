@@ -1,0 +1,23 @@
+CREATE TABLE `pa_request` (
+      `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+      `request_id` varchar(40) NOT NULL DEFAULT '',
+      `url` varchar(1000) NOT NULL DEFAULT '',
+      `method` varchar(10) NOT NULL DEFAULT '',
+      `request_time` int(11) unsigned NOT NULL DEFAULT '0',
+      `cost_time` bigint(20) NOT NULL DEFAULT '0',
+      `host` varchar(1000) NOT NULL DEFAULT '',
+      `memory` bigint(20) NOT NULL DEFAULT '0',
+      `pmemory` bigint(20) NOT NULL DEFAULT '0',
+      `cpu_time` bigint(20) NOT NULL DEFAULT '0',
+      `cookie` blob NOT NULL,
+      `get` blob NOT NULL,
+      `post` blob NOT NULL,
+      `server` blob NOT NULL,
+      `profile` mediumblob NOT NULL,
+      `ctime` int(11) unsigned NOT NULL,
+      `app` varchar(20) NOT NULL DEFAULT '',
+      PRIMARY KEY (`id`),
+      KEY `app` (`app`),
+      KEY `request_id` (`request_id`),
+      KEY `request_time` (`request_time`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
