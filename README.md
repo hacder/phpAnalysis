@@ -27,11 +27,12 @@ phpAnalysis是一款轻量级非侵入式PHP应用性能分析器，适用于开
 2. PHP版本>= 5.4.0
 
 #### 安装phpAnalysis
-1. 下载源代码
+1. 下载源代码及其依赖
 ```
-cd /home/www
-git clone https://github.com/dreamans/phpAnalysis.git
-cd phpAnalysis
+$ cd /home/www
+$ git clone https://github.com/dreamans/phpAnalysis.git
+$ cd phpAnalysis
+$ git submodule update --init --recursive
 ```
 2. 修改配置文件
 ```
