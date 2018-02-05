@@ -22,10 +22,12 @@ foreach (['PDO', 'pdo_mysql', 'zlib'] as $ext) {
 }
 
 // 检测php版本,5.4及其以上可用 
-if (!(PHP_MAJOR_VERSION == 5 && PHP_MINOR_VERSION > 3)) {
+if (!(PHP_MAJOR_VERSION >= 5 && PHP_MINOR_VERSION > 3)) {
     error_log('phpAnalysis - php version must be newer 5.3');
     return;
 }
+// or if(version_compare(PHP_VERSION,'5.3.0','<='))  die('phpAnalysis - php version must be newer 5.3!');
+
 
 $appDir = dirname(__DIR__);
 $configure = require_once $appDir . '/config/agent.php';
