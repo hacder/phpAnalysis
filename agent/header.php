@@ -22,7 +22,7 @@ foreach (['PDO', 'pdo_mysql', 'zlib'] as $ext) {
 }
 
 if (version_compare(PHP_VERSION, '5.4.0', 'le')){  
-    error_log('phpAnalysis - php version must be newer 5.4');
+    error_log('phpAnalysis - php version must be newer 5.4.0');
     return;
 }
 
