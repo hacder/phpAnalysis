@@ -21,9 +21,8 @@ foreach (['PDO', 'pdo_mysql', 'zlib'] as $ext) {
     }
 }
 
-// 检测php版本,5.4及其以上可用 
-if (!(PHP_MAJOR_VERSION == 5 && PHP_MINOR_VERSION > 3)) {
-    error_log('phpAnalysis - php version must be newer 5.3');
+if (version_compare(PHP_VERSION, '5.4.0', 'le')){  
+    error_log('phpAnalysis - php version must be newer 5.4');
     return;
 }
 
