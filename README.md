@@ -23,7 +23,7 @@ phpAnalysis是一款轻量级非侵入式PHP应用性能分析器，适用于开
 
 ## 安装
 #### 准备
-1. 依赖的PHP扩展：<a target="_blank" href="https://tideways.io/profiler/article/35-installation-on-php">tideaways</a>, PDO, pdo_mysql, zlib
+1. 依赖的PHP扩展：tideaways ([扩展下载地址](https://github.com/tideways/php-xhprof-extension)), PDO, pdo_mysql, zlib
 2. PHP版本>= 5.4.0
 
 #### 安装phpAnalysis
@@ -120,7 +120,7 @@ tideways.sample_rate=100
 ## 说明
 项目处于开发阶段，权限控制未完成且未做性能优化，**请勿在生产环境中部署**，感谢支持！
 
-稳定版本预计清明前后释出，敬请期待！
+稳定版本预计下个月释出，敬请期待！
 
 对项目有任何意见建议请提issue https://github.com/dreamans/phpAnalysis/issues
  
