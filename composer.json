@@ -1,5 +1,5 @@
 {
-    "name": "dreamans/phpAnalysis",
+    "name": "dreamans/php-analysis",
     "description": "PHP应用性能分析系统",
     "keywords": ["phpAnalysis"],
     "require": {
