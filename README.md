@@ -123,6 +123,8 @@ tideways.sample_rate=100
 稳定版本预计下个月释出，敬请期待！
 
 对项目有任何意见建议请提issue https://github.com/dreamans/phpAnalysis/issues
+
+**交流QQ群：174093801**
  
 ## License
 MIT license.
