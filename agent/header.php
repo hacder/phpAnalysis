@@ -1,10 +1,13 @@
 <?php
 
-$extName = 'tideways';
+$extNames = [
+    'tideways',
+    'tideways_xhprof',
+];
 
 // 检测扩展是否存在
-if (!extension_loaded($extName)) {
-    error_log('phpAnalysis - php extension '. $extName .'must be loaded');
+if (!($extName = IsTidewaysExtensionLoaded($extNames))) {
+    error_log('phpAnalysis - php extension '. implode('|', $extNames) .'must be loaded');
     return;
 }
 
@@ -137,3 +140,14 @@ register_shutdown_function(function($configure, $disableFn) {
 
 }, $configure, $disableFn);
 
+// 检查 tideways 扩展是否成功加载
+function IsTidewaysExtensionLoaded(array $extNames)
+{
+    foreach ($extNames as $extName) {
+        if (extension_loaded($extName)) {
+            return $extName;
+        }
+    }
+
+    return 0;
+}
