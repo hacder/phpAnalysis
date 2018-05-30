@@ -120,8 +120,6 @@ tideways.sample_rate=100
 ## 说明
 项目处于开发阶段，权限控制未完成且未做性能优化，**请勿在生产环境中部署**，感谢支持！
 
-稳定版本预计下个月释出，敬请期待！
-
 对项目有任何意见建议请提issue https://github.com/dreamans/phpAnalysis/issues
 
 **交流QQ群：174093801**
