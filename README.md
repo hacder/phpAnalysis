@@ -110,19 +110,6 @@ tideways.sample_rate=100
 * 调用明细
 
 <img src="http://my-bucket.u.qiniudn.com/phpAnalysis/pa_detail_list.png">
-
-## TODO
-* 权限系统
-* PHP应用管理
-* 应用控制台
-* 报表系统
-
-## 说明
-项目处于开发阶段，权限控制未完成且未做性能优化，**请勿在生产环境中部署**，感谢支持！
-
-对项目有任何意见建议请提issue https://github.com/dreamans/phpAnalysis/issues
-
-**交流QQ群：174093801**
  
 ## License
 MIT license.
